@@ -4,7 +4,7 @@ using PaymentProcessorApi.Models;
 namespace PaymentProcessorApi.Controllers
 {
     [ApiController]
-    [Route("api/mockgateway")]
+    [Route("api/[controller]")]
     public class MockGatewayController : ControllerBase
     {
         [HttpGet("payments/{id}")]

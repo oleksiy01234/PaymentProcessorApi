@@ -1,5 +1,4 @@
 ﻿using PaymentProcessorApi.Models;
-using System.Net.Http.Json;
 
 namespace PaymentProcessorApi.Services
 {
