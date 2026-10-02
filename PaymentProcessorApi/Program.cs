@@ -1,4 +1,6 @@
 
+using PaymentProcessorApi.Services;
+
 namespace PaymentProcessorApi
 {
     public class Program
@@ -11,6 +13,10 @@ namespace PaymentProcessorApi
             builder.Services.AddControllers();
             builder.Services.AddAuthorization();
             builder.Services.AddOpenApi();
+            builder.Services.AddHttpClient<IPaymentGatewayService, PaymentGatewayService>(client =>
+            {
+                client.BaseAddress = new Uri(builder.Configuration["PaymentGateway:BaseUrl"]!);
+            });
 
             var app = builder.Build();
 
