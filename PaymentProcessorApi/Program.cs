@@ -17,6 +17,7 @@ namespace PaymentProcessorApi
             {
                 client.BaseAddress = new Uri(builder.Configuration["PaymentGateway:BaseUrl"]!);
             });
+            builder.Services.AddSingleton<IIdempotencyService, InMemoryIdempotencyService>();
 
             var app = builder.Build();
 
